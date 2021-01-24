@@ -16,7 +16,7 @@ exports.createNewsletter = async (req,res) => {
    await newsletter.save();
 
  
-    //cashing data 
+    //CASHING DATA
     let lastItem = req.body.email;
     console.log(lastItem)
     
@@ -34,7 +34,7 @@ exports.createNewsletter = async (req,res) => {
         from: EMAIL,
         to: lastItem,
         subject: 'Your Fresh Design News!',
-        text: 'WELCOME TO THE NEWSLETTER!!!!'
+        text: `Hi ${req.body.name}! WELCOME TO THE NEWSLETTER!!!!`
     }
     
     transporter.sendMail(mailOptions,(error,info) => {
@@ -44,12 +44,12 @@ exports.createNewsletter = async (req,res) => {
             console.log('Email sent: ' + info.response)
         }
     });
-
+    //RESPONSE TO THE CLIENT
     res.send({
         status: true,
         message: 'Data is received',
     });
-//    res.send({data: newsletter});
+
 };
 
 exports.findNewsletter = async (req,res) => {
