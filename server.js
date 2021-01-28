@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 //definig 
 
-const URI = process.env.URI;
+const URI = 'mongodb+srv://Mikus:Organy9016@cluster0.3zr1s.mongodb.net/test?retryWrites=true&w=majority';
 
 
 
