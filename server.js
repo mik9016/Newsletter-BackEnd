@@ -37,7 +37,7 @@ console.log('Connected to DB!')
 // app.use(express.json());
 
 app.get('/newsletter', newsletterController.findNewsletters);
-app.post('/newsletter',cors(corsOptions). newsletterController.createNewsletter);
+app.post('/newsletter',cors(corsOptions), newsletterController.createNewsletter);
 app.get('/newsletter/:id'/ newsletterController.findNewsletter);
 
 app.listen(port, () => {
