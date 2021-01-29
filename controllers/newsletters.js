@@ -23,11 +23,17 @@ exports.createNewsletter = async (req,res) => {
     //NODEMAILER
 
     const transporter = nodemailer.createTransport({
-    service: 'Yahoo',
+    
+    host: 'smtp.mail.yahoo.com',
+    port: 465,
+    service:'Yahoo',
+    secure: false,
     auth: {
         user: EMAIL,
         pass: PASSWORD
-    }
+    },
+    debug: false,
+    logger: true 
 });
 
     const mailOptions = { 
