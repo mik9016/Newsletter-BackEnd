@@ -17,7 +17,7 @@ var corsOptions = {
 
 const port = process.env.PORT || 3000;
 
-// app.use(cors());
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -38,7 +38,7 @@ console.log('Connected to DB!')
 
 app.get('/newsletter', newsletterController.findNewsletters);
 app.post('/newsletter',cors(corsOptions). newsletterController.createNewsletter);
-app.get('/newsletter/:id',/ newsletterController.findNewsletter);
+app.get('/newsletter/:id'/ newsletterController.findNewsletter);
 
 app.listen(port, () => {
     console.log(`App is listening on port ${port}.`)}
