@@ -10,10 +10,6 @@ const newsletterController = require('./controllers/newsletters');
 
 const app = express();
 
-var corsOptions = {
-    origin: 'https://newsletter2-9880b.web.app/',
-    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-  }
 
 const port = process.env.PORT || 3000;
 
@@ -37,7 +33,7 @@ console.log('Connected to DB!')
 // app.use(express.json());
 
 app.get('/newsletter', newsletterController.findNewsletters);
-app.post('/newsletter',cors(corsOptions), newsletterController.createNewsletter);
+app.post('/newsletter', newsletterController.createNewsletter);
 app.get('/newsletter/:id'/ newsletterController.findNewsletter);
 
 app.listen(port, () => {
