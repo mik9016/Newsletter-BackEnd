@@ -2,7 +2,7 @@ const Newsletter = require('../models/Newsletter');
 require('dotenv').config();
 const nodemailer = require('nodemailer');
 
-const EMAIL = 'mikolajgruszecki@yahoo.com';
+const EMAIL = 'mikgru9016@gmail.com';
 const PASSWORD = 'Organy9016';
 
 exports.findNewsletters =  async (req, res) => {
@@ -24,9 +24,9 @@ exports.createNewsletter = async (req,res) => {
 
     const transporter = nodemailer.createTransport({
     
-    host: 'smtp.mail.yahoo.com',
-    port: 465,
-    service:'Yahoo',
+    // host: 'smtp.mail.yahoo.com',
+    // port: 465,
+    service:'Gmail',
     secure: false,
     auth: {
         user: EMAIL,
