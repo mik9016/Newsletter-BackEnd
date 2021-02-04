@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 //definig 
 
-const URI = 'mongodb+srv://Mikus:Organy9016@cluster0.3zr1s.mongodb.net/test?retryWrites=true&w=majority';
+const URI = process.env.URI;
 
 
 
@@ -30,7 +30,7 @@ mongoose.connect(URI, {useNewUrlParser: true, useUnifiedTopology: true})
 .then(() => {
 
 console.log('Connected to DB!')
-// app.use(express.json());
+
 
 app.get('/newsletter', newsletterController.findNewsletters);
 app.post('/newsletter', newsletterController.createNewsletter);

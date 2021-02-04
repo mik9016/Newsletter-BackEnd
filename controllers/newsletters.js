@@ -2,8 +2,9 @@ const Newsletter = require('../models/Newsletter');
 require('dotenv').config();
 const nodemailer = require('nodemailer');
 
-const EMAIL = 'mikgru9016@gmail.com';
-const PASSWORD = 'Organy9016';
+const EMAIL = process.env.EMAIL;
+const PASSWORD = process.env.PASSWORD;
+
 
 exports.findNewsletters =  async (req, res) => {
     const newsletter = await Newsletter.find();
